@@ -13,7 +13,7 @@
     <description>微服务网关</description>
 
     <properties>
-        <java.version>11</java.version>
+
     </properties>
 
     <dependencies>
