@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>cloud.xiaojingge</groupId>
+    <artifactId>xiaojingge-cloud-dependencies</artifactId>
+    <version>1.0.0</version>
+    <packaging>pom</packaging>
+    <description>微服务依赖版本统一管理</description>
+
+    <properties>
+        <!-- Spring Boot 依赖 -->
+        <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-parent -->
+        <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-dependencies -->
+        <!-- https://oss.sonatype.org/content/repositories/public/org/springframework/boot/spring-boot-starter-parent -->
+        <!-- https://oss.sonatype.org/content/repositories/public/org/springframework/boot/spring-boot-dependencies -->
+        <!-- https://repo.spring.io/ui/native/milestone/org/springframework/boot/spring-boot-starter-parent -->
+        <!-- https://repo.spring.io/ui/native/milestone/org/springframework/boot/spring-boot-dependencies -->
+        <!-- https://github.com/spring-projects/spring-boot -->
+        <!-- https://github.com/FasterXML/jackson-databind -->
+        <!-- https://github.com/FasterXML/jackson-core -->
+        <!-- https://github.com/FasterXML/jackson-annotations -->
+        <!-- https://github.com/FasterXML/jackson-dataformat-xml -->
+        <!-- https://github.com/FasterXML/jackson-annotations -->
+        <!-- https://github.com/FasterXML/jackson-datatype-jsr310 -->
+        <!-- https://github.com/FasterXML/jackson-dataformats-text -->
+        <!-- https://github.com/FasterXML/jackson-dataformat-yaml -->
+        <!-- https://github.com/FasterXML/jackson-dataformat-properties -->
+        <!-- https://github.com/FasterXML/jackson-dataformat-ini -->
+        <spring-boot.version>2.7.18</spring-boot.version>
+        <!-- Spring Cloud 依赖 -->
+        <!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-dependencies -->
+        <!-- https://oss.sonatype.org/content/repositories/public/org/springframework/cloud/spring-cloud-dependencies -->
+        <!-- https://repo.spring.io/ui/native/milestone/org/springframework/cloud/spring-cloud-dependencies -->
+        <!-- https://github.com/spring-cloud -->
+        <!-- https://github.com/spring-cloud/spring-cloud-gateway -->
+        <!-- https://github.com/spring-cloud/spring-cloud-openfeign -->
+        <!-- https://github.com/spring-cloud/spring-cloud-circuitbreaker -->
+        <spring-cloud.version>2021.0.9</spring-cloud.version>
+        <!-- Alibaba Cloud 依赖 -->
+        <!-- https://mvnrepository.com/artifact/com.alibaba.cloud/spring-cloud-alibaba-dependencies -->
+        <!-- https://oss.sonatype.org/content/repositories/public/com/alibaba/cloud/spring-cloud-alibaba-dependencies -->
+        <!-- https://github.com/alibaba/spring-cloud-alibaba -->
+        <spring-cloud-alibaba.version>2021.1</spring-cloud-alibaba.version>
+        <!-- 监控（管理）依赖 -->
+        <!-- https://mvnrepository.com/artifact/de.codecentric/spring-boot-admin-dependencies -->
+        <!-- https://oss.sonatype.org/content/repositories/public/de/codecentric/spring-boot-admin-dependencies -->
+        <!-- https://github.com/codecentric/spring-boot-admin -->
+        <spring-boot-admin.version>2.7.14</spring-boot-admin.version>
+        <!-- OAuth 2.1 依赖 -->
+        <!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-oauth2-authorization-server -->
+        <!-- https://oss.sonatype.org/content/repositories/public/org/springframework/security/spring-security-oauth2-authorization-server -->
+        <!-- https://repo.spring.io/ui/native/milestone/org/springframework/security/spring-security-oauth2-authorization-server -->
+        <!-- https://github.com/spring-projects/spring-authorization-server -->
+        <spring-security-oauth2-authorization-server.version>0.4.4</spring-security-oauth2-authorization-server.version>
+
+        <!-- https://s01.oss.sonatype.org/content/repositories/public/cn/com/xuxiaowei/boot/spring-security-oauth2-authorization-server-redis/ -->
+        <spring-security-oauth2-authorization-server-redis.version>0.1.0-SNAPSHOT
+        </spring-security-oauth2-authorization-server-redis.version>
+
+        <!-- https://mvnrepository.com/artifact/cn.com.xuxiaowei.boot/spring-boot-starter-oauth2 -->
+        <!-- https://s01.oss.sonatype.org/content/repositories/public/cn/com/xuxiaowei/boot/spring-boot-starter-oauth2/ -->
+        <spring-boot-starter-oauth2.version>1.0.0-SNAPSHOT</spring-boot-starter-oauth2.version>
+
+        <!-- MyBatis -->
+        <!-- https://mvnrepository.com/artifact/org.mybatis.spring.boot/mybatis-spring-boot-starter -->
+        <!-- https://oss.sonatype.org/content/repositories/public/org/mybatis/spring/boot/mybatis-spring-boot-starter -->
+        <!-- https://oss.sonatype.org/content/repositories/snapshots/org/mybatis/spring/boot/mybatis-spring-boot-starter/ -->
+        <!-- https://github.com/mybatis/spring-boot-starter -->
+        <!-- 从 3.0.0 开始，需要 JDK 17，参见：https://repo1.maven.org/maven2/org/mybatis/spring/boot/mybatis-spring-boot/3.0.0/mybatis-spring-boot-3.0.0.pom -->
+        <mybatis-spring-boot-starter.version>2.3.2</mybatis-spring-boot-starter.version>
+        <!-- MyBatis Plus -->
+        <!-- https://mvnrepository.com/artifact/com.baomidou/mybatis-plus-boot-starter -->
+        <!-- https://oss.sonatype.org/content/repositories/public/com/baomidou/mybatis-plus-boot-starter -->
+        <!-- https://github.com/baomidou/mybatis-plus -->
+        <mybatis-plus-boot-starter.version>3.5.4.1</mybatis-plus-boot-starter.version>
+        <!-- MyBatis Plus Generator -->
+        <!-- https://mvnrepository.com/artifact/com.baomidou/mybatis-plus-generator -->
+        <!-- https://oss.sonatype.org/content/repositories/public/com/baomidou/mybatis-plus-generator -->
+        <!-- https://github.com/baomidou/generator -->
+        <mybatis-plus-generator.version>3.5.4.1</mybatis-plus-generator.version>
+        <!-- Velocity -->
+        <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-velocity -->
+        <!-- https://oss.sonatype.org/content/repositories/public/org/springframework/boot/spring-boot-starter-velocity -->
+        <spring-boot-starter-velocity.version>1.4.7.RELEASE</spring-boot-starter-velocity.version>
+        <!-- 多数据源 -->
+        <!-- https://mvnrepository.com/artifact/com.baomidou/dynamic-datasource-spring-boot-starter -->
+        <!-- https://oss.sonatype.org/content/repositories/public/com/baomidou/dynamic-datasource-spring-boot-starter -->
+        <!-- https://github.com/baomidou/dynamic-datasource-spring-boot-starter -->
+        <dynamic-datasource-spring-boot-starter.version>4.2.0</dynamic-datasource-spring-boot-starter.version>
+        <!-- https://mvnrepository.com/artifact/com.baomidou/mybatis-plus-extension -->
+        <!-- https://oss.sonatype.org/content/repositories/public/com/baomidou/mybatis-plus-extension -->
+        <!-- https://github.com/baomidou/mybatis-plus -->
+        <mybatis-plus-extension.version>3.5.4.1</mybatis-plus-extension.version>
+        <!-- SQL 性能分析 -->
+        <!-- https://mvnrepository.com/artifact/p6spy/p6spy -->
+        <!-- https://oss.sonatype.org/content/repositories/public/p6spy/p6spy -->
+        <!-- https://github.com/p6spy/p6spy -->
+        <p6spy.version>3.9.1</p6spy.version>
+
+        <!-- guava -->
+        <!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
+        <!-- https://oss.sonatype.org/content/repositories/public/com/google/guava/guava -->
+        <!-- https://github.com/google/guava -->
+        <guava.version>33.0.0-jre</guava.version>
+
+        <!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+        <!-- https://oss.sonatype.org/content/repositories/public/commons-io/commons-io -->
+        <!-- https://github.com/apache/commons-io -->
+        <commons-io.version>2.15.1</commons-io.version>
+        <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
+        <!-- https://oss.sonatype.org/content/repositories/public/org/apache/commons/commons-lang3 -->
+        <commons-lang3.version>3.14.0</commons-lang3.version>
+        <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-text -->
+        <!-- https://oss.sonatype.org/content/repositories/public/org/apache/commons/commons-text -->
+        <commons-text.version>1.11.0</commons-text.version>
+
+        <!-- 阿里巴巴 MySQL binlog 增量订阅、消费服务 -->
+        <!-- https://mvnrepository.com/artifact/com.alibaba.otter/canal.client -->
+        <!-- https://mvnrepository.com/artifact/com.alibaba.otter/canal.protocol -->
+        <!-- https://oss.sonatype.org/content/repositories/public/com/alibaba/otter/canal.client -->
+        <!-- https://oss.sonatype.org/content/repositories/public/com/alibaba/otter/canal.protocol -->
+        <!-- https://github.com/alibaba/canal -->
+        <canal.version>1.1.7</canal.version>
+
+        <!-- https://mvnrepository.com/artifact/com.alibaba/fastjson -->
+        <!-- https://oss.sonatype.org/content/repositories/public/com/alibaba/fastjson -->
+        <!-- https://github.com/alibaba/fastjson -->
+        <fastjson.version>2.0.44</fastjson.version>
+
+        <!-- https://mvnrepository.com/artifact/cn.hutool/hutool-all -->
+        <!-- https://oss.sonatype.org/content/repositories/public/cn/hutool/hutool-all -->
+        <!-- https://github.com/dromara/hutool -->
+        <hutool-all.version>5.8.23</hutool-all.version>
+
+        <!-- https://mvnrepository.com/artifact/org.apache.cxf/cxf-rt-frontend-jaxws -->
+        <!-- https://mvnrepository.com/artifact/org.apache.cxf/cxf-rt-transports-http -->
+        <!-- https://mvnrepository.com/artifact/org.apache.cxf/cxf-rt-features-logging -->
+        <!-- https://oss.sonatype.org/content/repositories/public/org/apache/cxf/cxf-rt-frontend-jaxws -->
+        <!-- https://oss.sonatype.org/content/repositories/public/org/apache/cxf/cxf-rt-transports-http -->
+        <!-- https://oss.sonatype.org/content/repositories/public/org/apache/cxf/cxf-rt-features-logging -->
+        <!-- https://github.com/apache/cxf -->
+        <cxf.version>3.5.7</cxf.version>
+
+        <!-- https://mvnrepository.com/artifact/org.dom4j/dom4j -->
+        <!-- https://oss.sonatype.org/content/repositories/public/org/dom4j/dom4j -->
+        <!-- https://github.com/dom4j/dom4j -->
+        <dom4j.version>2.1.4</dom4j.version>
+
+        <!-- https://mvnrepository.com/artifact/com.github.binarywang/weixin-java-miniapp -->
+        <!-- https://mvnrepository.com/artifact/com.github.binarywang/wx-java-mp-spring-boot-starter -->
+        <!-- https://oss.sonatype.org/content/repositories/public/com/github/binarywang/weixin-java-miniapp -->
+        <!-- https://oss.sonatype.org/content/repositories/public/com/github/binarywang/weixin-mp-miniapp -->
+        <!-- https://github.com/Wechat-Group/WxJava -->
+        <weixin-java.version>4.5.0</weixin-java.version>
+
+        <!-- https://mvnrepository.com/artifact/com.xuxueli/xxl-job-core -->
+        <!-- https://oss.sonatype.org/content/repositories/public/com/xuxueli/xxl-job-core -->
+        <!-- https://github.com/xuxueli/xxl-job -->
+        <xxl-job-core.version>2.4.0</xxl-job-core.version>
+
+        <!-- 图片验证码 -->
+        <!-- https://mvnrepository.com/artifact/com.github.bingoohuang/patchca -->
+        <!-- https://repo1.maven.org/maven2/com/github/bingoohuang/patchca/ -->
+        <patchca.version>0.0.1</patchca.version>
+
+        <!-- 阿里云 短信服务 升级版 SDK Java：https://next.api.aliyun.com/api-tools/sdk/Dysmsapi?language=java-tea -->
+        <!-- https://mvnrepository.com/artifact/com.aliyun/dysmsapi20170525 -->
+        <!-- https://repo1.maven.org/maven2/com/aliyun/dysmsapi20170525 -->
+        <dysmsapi20170525.version>2.0.24</dysmsapi20170525.version>
+        <!-- 阿里云 短信服务 升级版 SDK Java（异步）：https://next.api.aliyun.com/api-tools/sdk/Dysmsapi?language=java-async-tea -->
+        <!-- https://mvnrepository.com/artifact/com.aliyun/alibabacloud-dysmsapi20170525 -->
+        <!-- https://repo1.maven.org/maven2/com/aliyun/alibabacloud-dysmsapi20170525/ -->
+        <alibabacloud-dysmsapi20170525.version>2.0.24</alibabacloud-dysmsapi20170525.version>
+
+        <!-- 阿里云 OSS 对象储存 https://help.aliyun.com/document_detail/32009.html -->
+        <!-- https://mvnrepository.com/artifact/com.aliyun.oss/aliyun-sdk-oss -->
+        <aliyun-sdk-oss.version>3.17.2</aliyun-sdk-oss.version>
+
+        <!-- https://mvnrepository.com/artifact/org.springdoc/springdoc-openapi-ui -->
+        <!-- https://mvnrepository.com/artifact/org.springdoc/springdoc-openapi-javadoc -->
+        <!-- https://mvnrepository.com/artifact/org.springdoc/springdoc-openapi-security -->
+        <!-- https://mvnrepository.com/artifact/org.springdoc/springdoc-openapi-webflux-ui -->
+        <!-- https://repo1.maven.org/maven2/org/springdoc/springdoc-openapi-ui/ -->
+        <!-- https://repo1.maven.org/maven2/org/springdoc/springdoc-openapi-javadoc/ -->
+        <!-- https://repo1.maven.org/maven2/org/springdoc/springdoc-openapi-security/ -->
+        <!-- https://repo1.maven.org/maven2/org/springdoc/springdoc-openapi-webflux-ui/ -->
+        <springdoc.version>1.7.0</springdoc.version>
+        <!-- https://mvnrepository.com/artifact/com.github.therapi/therapi-runtime-javadoc -->
+        <!-- https://repo1.maven.org/maven2/com/github/therapi/therapi-runtime-javadoc/ -->
+        <therapi-runtime-javadoc.version>0.15.0</therapi-runtime-javadoc.version>
+
+
+        <!-- https://mvnrepository.com/artifact/org.gitlab4j/gitlab4j-api -->
+        <gitlab-api.version>5.2.0</gitlab-api.version>
+        <!-- https://mvnrepository.com/artifact/org.kohsuke/github-api -->
+        <github-api.version>1.314</github-api.version>
+
+
+        <!-- https://nodejs.org/dist/ -->
+        <!-- http://mirrors.aliyun.com/nodejs-release/ -->
+        <node.version>v16.18.1</node.version>
+        <!-- https://www.npmjs.com/package/npm -->
+        <!-- https://npmmirror.com/package/npm -->
+        <npm.version>9.1.1</npm.version>
+        <!-- https://www.npmjs.com/package/yarn -->
+        <!-- https://npmmirror.com/package/yarn -->
+        <yarn.version>v1.22.19</yarn.version>
+
+        <!--<node-download-root>https://nodejs.org/dist/</node-download-root>-->
+        <node-download-root>https://mirrors.aliyun.com/nodejs-release/</node-download-root>
+
+        <!--<npm-download-root>https://registry.npmjs.org/npm/-/</npm-download-root>-->
+        <!-- http://npm.taobao.org 和 http://registry.npm.taobao.org 将在 2022.06.30 号正式下线和停止 DNS 解析 https://developer.aliyun.com/mirror/NPM -->
+        <!-- 如：https://registry.npmmirror.com/npm/-/npm-8.12.1.tgz -->
+        <npm-download-root>https://registry.npmmirror.com/npm/-/</npm-download-root>
+
+        <!-- https://github.com/fabric8io/docker-maven-plugin -->
+        <!-- https://repo1.maven.org/maven2/io/fabric8/docker-maven-plugin/ -->
+        <!-- https://mvnrepository.com/artifact/io.fabric8/docker-maven-plugin -->
+        <!-- https://dmp.fabric8.io/ -->
+        <docker-maven-plugin.version>0.43.4</docker-maven-plugin.version>
+        <!-- docker 守护程序的 URL -->
+        <docker.host>http://host.docker.example.xuxiaowei.cloud:2375</docker.host>
+        <!-- docker 私库 -->
+        <docker.registry>registry.docker.example.xuxiaowei.cloud</docker.registry>
+        <!-- docker 上传时的用户名 -->
+        <docker.username>admin</docker.username>
+        <!-- docker 上传时的密码，请使用：-Ddocker.password=xxx 来指定真实密码，请勿将真实密码写在此处 -->
+        <docker.password>xuxiaowei</docker.password>
+        <!--
+            构建时使用 -DCI_JAVA_OPTS=xxx 会覆盖此配置
+            可在构建docker镜像时，指定环境变量，指定后，会记录在docker镜像中环境 JAVA_OPTS 中
+            如果在启动容器时，不想使用构建时的环境变量，可自行指定
+            说明：构建时指定环境变量名是 CI_JAVA_OPTS，而docker镜像记录后的名称为 JAVA_OPTS，避免因为重名而造成未知问题
+            不能为空，否则报错
+         -->
+        <CI_JAVA_OPTS>-Xms128m -Xmx256m</CI_JAVA_OPTS>
+        <!--
+            构建时使用 -DCI_APP_OPTS=xxx 会覆盖此配置
+            可在构建docker镜像时，指定环境变量，指定后，会记录在docker镜像中环境 APP_ARGS 中
+            如果在启动容器时，不想使用构建时的环境变量，可自行指定
+            用于放在 java -jar app.jar 最后，用以指定个性化参数
+            说明：构建时指定环境变量名是 CI_APP_ARGS，而docker镜像记录后的名称为 APP_ARGS
+            不能为空，否则报错
+         -->
+        <CI_APP_ARGS>--ci_author=xuxiaowei</CI_APP_ARGS>
+
+        <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-compiler-plugin -->
+        <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
+        <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-jar-plugin -->
+        <maven-jar-plugin.version>3.3.0</maven-jar-plugin.version>
+        <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-source-plugin -->
+        <maven-source-plugin.version>3.3.0</maven-source-plugin.version>
+        <!-- https://mvnrepository.com/artifact/org.codehaus.mojo/license-maven-plugin -->
+        <license-maven-plugin.version>2.3.0</license-maven-plugin.version>
+        <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-resources-plugin -->
+        <maven-resources-plugin.version>3.3.1</maven-resources-plugin.version>
+        <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-gpg-plugin -->
+        <maven-gpg-plugin.version>3.1.0</maven-gpg-plugin.version>
+        <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok-maven-plugin -->
+        <lombok-maven-plugin.version>1.18.20.0</lombok-maven-plugin.version>
+        <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+        <lombok.version>1.18.30</lombok.version>
+        <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-javadoc-plugin -->
+        <maven-javadoc-plugin.version>3.6.2</maven-javadoc-plugin.version>
+        <!-- https://mvnrepository.com/artifact/pl.project13.maven/git-commit-id-plugin -->
+        <git-commit-id-plugin.version>4.9.10</git-commit-id-plugin.version>
+        <!-- https://mvnrepository.com/artifact/com.github.eirslett/frontend-maven-plugin -->
+        <frontend-maven-plugin.version>1.15.0</frontend-maven-plugin.version>
+        <!-- https://mvnrepository.com/artifact/io.spring.javaformat/spring-javaformat-maven-plugin -->
+        <!-- https://github.com/spring-io/spring-javaformat/ -->
+        <!-- 高版本支持 JDK 8：https://github.com/spring-io/spring-javaformat/#java-8-support -->
+        <spring-javaformat-maven-plugin.version>0.0.42</spring-javaformat-maven-plugin.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+
+            <!-- spring cloud alibaba -->
+            <!--<dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${spring-cloud-alibaba.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>-->
+
+            <!-- springboot -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- spring cloud -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+</project>

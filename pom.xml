@@ -2,30 +2,61 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>cloud.xiaojingge</groupId>
+        <artifactId>xiaojingge-cloud-dependencies</artifactId>
+        <version>1.0.0</version>
+        <!-- 这么做的目的是因为，scope为import时，properties中的环境变量属性不会被导入，使用pom继承可以解决这个问题 -->
+        <relativePath>./xiaojingge-cloud-dependencies/pom.xml</relativePath>
+    </parent>
     <groupId>cloud.xiaojingge</groupId>
     <artifactId>xiaojingge-cloud</artifactId>
     <version>1.0.0</version>
     <packaging>pom</packaging>
     <name>xiaojingge-cloud</name>
-    <description>筱晶哥微服务</description>
+    <description>筱晶哥微服务顶级项目</description>
 
     <properties>
         <java.version>11</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <spring-boot.version>2.6.13</spring-boot.version>
+        <!-- 打包时跳过单元测试 -->
+        <skipTests>true</skipTests>
     </properties>
 
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-dependencies</artifactId>
-                <version>${spring-boot.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
+    <modules>
+        <!-- 依赖版本管理 -->
+        <module>xiaojingge-cloud-dependencies</module>
+        <!-- 微服务网关 -->
+        <module>xiaojingge-cloud-gateway</module>
+    </modules>
+
+    <build>
+        <plugins>
+            <!--
+              代码格式化支持，使用spring风格，如果没有按照spring风格，则会打包报错，使用以下方式格式化后，再打包
+              ./mvnw spring-javaformat:apply
+              mvn spring-javaformat:apply
+              高版本支持 JDK 8：https://github.com/spring-io/spring-javaformat/#java-8-support
+
+             https://mvnrepository.com/artifact/io.spring.javaformat/spring-javaformat-maven-plugin
+             对应的idea插件，下载后本地安装即可： https://repo1.maven.org/maven2/io/spring/javaformat/spring-javaformat-intellij-idea-plugin/
+            -->
+            <plugin>
+                <groupId>io.spring.javaformat</groupId>
+                <artifactId>spring-javaformat-maven-plugin</artifactId>
+                <version>${spring-javaformat-maven-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <phase>validate</phase>
+                        <inherited>true</inherited>
+                        <goals>
+                            <goal>validate</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
