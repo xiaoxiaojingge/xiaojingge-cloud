@@ -1,30 +1,52 @@
-# gitlab流水线
+# 定义流水线的阶段，这里是 'build' 阶段
 stages:
   - build
 
+# 定义名为 'build' 的作业(job)
 build:
+  # 指定此作业属于 'build' 阶段
   stage: build
+  # 使用 Maven Docker 镜像作为构建环境
   image: maven:3-openjdk-8
+  # 定义变量，用于Maven的JVM选项
   variables:
     MAVEN_OPTS: >-
+      # 设置TLS协议版本为TLSv1.2
       -Dhttps.protocols=TLSv1.2
+      # 指定本地Maven仓库的位置
       -Dmaven.repo.local=$CI_PROJECT_DIR/.m2/repository
+      # 开启SLF4J日志的时间戳显示
       -Dorg.slf4j.simpleLogger.showDateTime=true
+      # 禁用Java AWT头模式，避免GUI问题
       -Djava.awt.headless=true
     MAVEN_CLI_OPTS: >-
+      # Maven命令行选项，用于批处理模式
       --batch-mode
+      # 显示错误信息
       --errors
+      # 构建失败时停止
       --fail-at-end
+      # 显示Maven版本
       --show-version
+      # 不显示传输进度
       --no-transfer-progress
+      # 在构建结束时安装到本地仓库
       -DinstallAtEnd=true
+      # 在构建结束时部署到远程仓库
       -DdeployAtEnd=true
+  # 构建脚本，运行Maven命令
   script:
-    - mvn clean package -DskipTests=false
+    # 清理并打包项目，不跳过测试
+    - mvn clean package -DskipTests=false -s settings.xml
+  # 缓存设置，用于加速构建过程
   cache:
+    # 缓存键，用于标识缓存
     key: "${CI_JOB_NAME}"
+    # 要缓存的路径，通常是Maven本地仓库
     paths:
       - .m2/repository
+  # 限制构建仅在默认分支上运行
   only:
+    # 当前分支等于项目的默认分支时才运行
     variables:
       - $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
