@@ -11,28 +11,17 @@ build:
   # 定义变量，用于Maven的JVM选项
   variables:
     MAVEN_OPTS: >-
-      # 设置TLS协议版本为TLSv1.2
       -Dhttps.protocols=TLSv1.2
-      # 指定本地Maven仓库的位置
       -Dmaven.repo.local=$CI_PROJECT_DIR/.m2/repository
-      # 开启SLF4J日志的时间戳显示
       -Dorg.slf4j.simpleLogger.showDateTime=true
-      # 禁用Java AWT头模式，避免GUI问题
       -Djava.awt.headless=true
     MAVEN_CLI_OPTS: >-
-      # Maven命令行选项，用于批处理模式
       --batch-mode
-      # 显示错误信息
       --errors
-      # 构建失败时停止
       --fail-at-end
-      # 显示Maven版本
       --show-version
-      # 不显示传输进度
       --no-transfer-progress
-      # 在构建结束时安装到本地仓库
       -DinstallAtEnd=true
-      # 在构建结束时部署到远程仓库
       -DdeployAtEnd=true
   # 构建脚本，运行Maven命令
   script:
